@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 contract Factorial {
     uint public result;
 
-    function calculateFactorial(int256 n) public returns (uint256) {
+    function calculateFactorial(uint n) public returns (uint) {
         
         require(n >= 0, "Input must be a non-negative integer");
 
@@ -16,7 +16,7 @@ contract Factorial {
 
         result = 1;
 
-        for (uint256 i = 1; i <= uint256(n); i++) {
+        for (uint i = 1; i <= uint(n); i++) {
             assert(result * i / i == result); 
             result *= i;
         }
