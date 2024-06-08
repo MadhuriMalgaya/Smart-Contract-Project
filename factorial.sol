@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 contract Factorial {
     uint public result;
 
-    function calculateFactorial(uint n) public returns (uint) {
+    function calculateFactorial(int n) public returns (uint) {
         
         require(n >= 0, "Input must be a non-negative integer");
 
@@ -28,4 +28,3 @@ contract Factorial {
         revert("This function always revert");
     }
 }
-
