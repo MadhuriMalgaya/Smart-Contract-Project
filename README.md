@@ -22,6 +22,7 @@ To run this program, you can use Remix, an online Solidity IDE. To get started, 
 Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., factorial.sol). Copy and paste the following code into the file:
 
 ```
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -29,7 +30,13 @@ contract Factorial {
     uint public result;
 
     function calculateFactorial(int n) public returns (uint) {
+        
         require(n >= 0, "Input must be a non-negative integer");
+
+        if (n == 0) {
+            result = 1;
+            return result;
+        }
 
         result = 1;
 
@@ -42,9 +49,10 @@ contract Factorial {
     }
 
     function Revert() public pure {
-        revert("This function always reverts");
+        revert("This function always revert");
     }
 }
+
 
 ```
 # Usage
